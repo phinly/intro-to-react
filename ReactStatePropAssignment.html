@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Find the Dog
+    </title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+      class Detective extends React.Component {
+          constructor(props){
+           super(props);
+           this.state = {
+             level: 1,
+             detective: "Novice"
+
+           }
+         }
+        render() {
+          return (
+            <div>
+              <h1>Bodhi's accidentally been taken by diamond thieves.</h1>
+              <img src={this.props.image} alt="Bodhi picture"/>
+              <h2>Current task: {this.props.label}</h2>
+              <h3>Your current level: {this.state.level}</h3>
+              <h3>Your detective status: {this.state.detective}</h3>
+            </div>
+          );
+        }
+      }
+
+
+
+      Detective.defaultProps = {
+        label: "Track down the puppy's vet.",
+        image: 'https://thumbs2.imgbox.com/2b/ab/0v9Q4xpe_t.jpg'
+      }
+
+      ReactDOM.render(
+        <Detective/>,document.getElementById('app')
+      );
+
+    </script>
+  </body>
+</html>
